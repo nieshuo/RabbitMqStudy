@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicSender", "BasicSender\BasicSender.csproj", "{CAA568DB-520E-4F57-A079-DCECFB000FC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicRecevier", "BasicRecevier\BasicRecevier.csproj", "{52EF6E9A-547C-4683-ACDF-B8D5BB127EE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAA568DB-520E-4F57-A079-DCECFB000FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA568DB-520E-4F57-A079-DCECFB000FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA568DB-520E-4F57-A079-DCECFB000FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA568DB-520E-4F57-A079-DCECFB000FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52EF6E9A-547C-4683-ACDF-B8D5BB127EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52EF6E9A-547C-4683-ACDF-B8D5BB127EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52EF6E9A-547C-4683-ACDF-B8D5BB127EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52EF6E9A-547C-4683-ACDF-B8D5BB127EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
