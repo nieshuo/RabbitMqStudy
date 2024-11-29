@@ -19,7 +19,7 @@ using (var connection = await factory.CreateConnectionAsync())
             queue: "hello", //信道
             durable: false,
             exclusive: false,
-            autoDelete: false,
+            autoDelete: true,
             arguments: null
         );
 

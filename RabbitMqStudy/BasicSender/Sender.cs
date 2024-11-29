@@ -14,9 +14,9 @@ using (var connection = await factory.CreateConnectionAsync())
     {
         await channel.QueueDeclareAsync(
             queue: "hello", //信道
-            durable: false, //持久化
-            exclusive: false,   //排他
-            autoDelete: false,  //自动删除
+            durable: false, //如果true，则此种队列叫持久化队列（Durable queues）.此队列会被存储在磁盘上,当消息代理（broker）重启的时候，它依旧存在。没有被持久化的队列称作暂存队列（Transient queues）
+            exclusive: false,   //排他,表示此对应只能被当前创建的连接使用，而且当连接关闭后队列即被删除。此参考优先级高于durable 
+            autoDelete: true,  //自动删除,当没有生成者/消费者使用此队列时，此队列会被自动删除
             arguments: null
         );
 
@@ -27,7 +27,7 @@ using (var connection = await factory.CreateConnectionAsync())
         while (message != "EXIT")
         {
             var body = Encoding.UTF8.GetBytes(message);
-
+             
             var properties = new BasicProperties
             {
                 Persistent = true,//持久化的
