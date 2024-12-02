@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmitLogDirect", "EmitLogDir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiveLogDirect", "ReceiveLogDirect\ReceiveLogDirect.csproj", "{1CA1F1B4-5F09-45EE-8A55-D1D7EEB2D82B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MassTransits", "MassTransits", "{34CB3828-1014-4390-AE38-613CFDABBC74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mass.BasicInMemory", "Mass.BasicSender\Mass.BasicInMemory.csproj", "{877B6E01-7371-4454-B65F-D2F0AB918BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mass.BasicRabbitMq", "Mass.BasicRabbitMq\Mass.BasicRabbitMq.csproj", "{6DD9B195-0790-42E1-ABA8-0F5064105F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mass.QuickStart", "Mass.QuickStart\Mass.QuickStart.csproj", "{D43A92BA-36C0-4D60-85E9-B80F1DBA6736}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +41,25 @@ Global
 		{1CA1F1B4-5F09-45EE-8A55-D1D7EEB2D82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CA1F1B4-5F09-45EE-8A55-D1D7EEB2D82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CA1F1B4-5F09-45EE-8A55-D1D7EEB2D82B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877B6E01-7371-4454-B65F-D2F0AB918BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877B6E01-7371-4454-B65F-D2F0AB918BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877B6E01-7371-4454-B65F-D2F0AB918BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877B6E01-7371-4454-B65F-D2F0AB918BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD9B195-0790-42E1-ABA8-0F5064105F79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD9B195-0790-42E1-ABA8-0F5064105F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD9B195-0790-42E1-ABA8-0F5064105F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD9B195-0790-42E1-ABA8-0F5064105F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D43A92BA-36C0-4D60-85E9-B80F1DBA6736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D43A92BA-36C0-4D60-85E9-B80F1DBA6736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D43A92BA-36C0-4D60-85E9-B80F1DBA6736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D43A92BA-36C0-4D60-85E9-B80F1DBA6736}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{877B6E01-7371-4454-B65F-D2F0AB918BEF} = {34CB3828-1014-4390-AE38-613CFDABBC74}
+		{6DD9B195-0790-42E1-ABA8-0F5064105F79} = {34CB3828-1014-4390-AE38-613CFDABBC74}
+		{D43A92BA-36C0-4D60-85E9-B80F1DBA6736} = {34CB3828-1014-4390-AE38-613CFDABBC74}
 	EndGlobalSection
 EndGlobal
