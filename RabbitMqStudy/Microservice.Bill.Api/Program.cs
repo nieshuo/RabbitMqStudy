@@ -1,6 +1,9 @@
+using MassTransit;
 using Microservice.Bill.Api;
 using Microservice.Bill.Api.Data;
 using Microservice.Bill.Api.SignalR;
+using Microservice.Common.Contracts.Inventory;
+using Microservice.Common.Contracts.Stock;
 using Microservice.Common.CQRS;
 using Microservice.Common.MassTransit;
 using Microservice.Common.Snowflake;
@@ -15,6 +18,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMassTransitWithRabbitMq()
     .AddMediatRServices()
     .AddSnowflake(builder.Configuration);
+
+//使用send发送，需要绑定queue
+EndpointConvention.Map<AddStockEvent>(new Uri("queue:add-stock"));
+EndpointConvention.Map<AddInventoryEvent>(new Uri("queue:add-ware-inventory"));
 
 builder.Services.AddHostedService<Worker>();
 builder.Services.AddSingleton<MessageHub>().AddSignalR();

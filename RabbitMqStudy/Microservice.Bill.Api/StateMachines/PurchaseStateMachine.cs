@@ -60,7 +60,7 @@ namespace Microservice.Bill.Api.StateMachines
                         context.Saga.LastUpdated = context.Saga.Received;
                     })
                     .Activity(x => x.OfType<CalculatePurchaseTotalActivity>())
-                    .Publish(context => new AddStockEvent
+                    .Send(context => new AddStockEvent
                     {
                         DirectorId = context.Saga.DirectorId,
                         ProductId = context.Saga.ProductId,
@@ -91,7 +91,7 @@ namespace Microservice.Bill.Api.StateMachines
                         context.Saga.FormType = context.Message.FormType;
                         context.Saga.LastUpdated = DateTimeOffset.UtcNow;
                     })
-                    .Publish(context => new AddInventoryEvent
+                    .Send(context => new AddInventoryEvent
                     {
                         ProductId = context.Saga.ProductId,
                         Quantity = context.Saga.Quantity,
