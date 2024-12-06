@@ -1,0 +1,6 @@
+@Microservice.Bill.Api_HostAddress = http://localhost:5159
+
+GET {{Microservice.Bill.Api_HostAddress}}/swagger/
+Accept: application/json
+
+###

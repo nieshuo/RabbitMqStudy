@@ -1,5 +1,7 @@
 using Mass.QuickStart;
+using Mass.QuickStart.Contracts;
 using MassTransit;
+using RabbitMQ.Client;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,12 @@ builder.Services.AddMassTransit(x =>
     var entryAssembly = Assembly.GetEntryAssembly();
 
     x.AddConsumers(entryAssembly);
+
+    x.AddConfigureEndpointsCallback((context, name, cfg) =>
+    {
+        cfg.UseMessageRetry(r => r.Immediate(5));
+    });
+
     x.AddSagaStateMachines(entryAssembly);
     x.AddSagas(entryAssembly);
     x.AddActivities(entryAssembly);
@@ -29,6 +37,13 @@ builder.Services.AddMassTransit(x =>
         cfg.Host("localhost", 5672, "admin_vhost", h => {
             h.Username("guest");
             h.Password("guest");
+        });
+
+        cfg.Publish<UpdateCustomerAddress>(x =>
+        {
+            x.Durable = false; // default: true
+            x.AutoDelete = true; // default: false
+            x.ExchangeType = ExchangeType.Fanout; // default, allows any valid exchange type
         });
 
         cfg.ConfigureEndpoints(context);
