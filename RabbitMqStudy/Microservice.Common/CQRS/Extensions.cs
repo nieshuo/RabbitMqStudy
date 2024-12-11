@@ -14,6 +14,7 @@ namespace Microservice.Common.CQRS
                 config.RegisterServicesFromAssembly(Assembly.GetEntryAssembly());
                 config.AddOpenBehavior(typeof(ValidationBehavior<,>));
                 config.AddOpenBehavior(typeof(LoggingBehavior<,>));
+                config.AddOpenBehavior(typeof(ExceptionHandlingPipelineBehavior<,>));
             });
             return services;
         }
